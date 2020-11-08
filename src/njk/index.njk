@@ -6,7 +6,20 @@
     <div class="col">
       <h1>A pirate's life is for me</h1>
       <p>Hempen halter mizzenmast deadlights gaff pillage starboard jack lee Blimey draught. Man-of-war piracy black jack sutler Yellow Jack keel provost overhaul execution dock rigging. Log quarterdeck dead men tell no tales red ensign gibbet grog blossom bilge Nelsons folly code of conduct gunwalls.</p>
+      <h2>Blog Loop</h2>
     </div>
   </div>
+  <div class="row">
+    {% for blogs in blog.blogs %}
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <img src="img/{{ blogs.image }}" alt="kraken" class= "img-fluid">
+          <h5 class="card-title"><a href="blog/{{ blogs.slug }}.html" target="{{ blogs.post }}"> {{ blogs.slug }}</a></h5>
+          <p class="card-text">{{ blogs.headline }}, {{ blogs.date }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
